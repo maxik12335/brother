@@ -127,9 +127,40 @@
   
         <p class="images-message">Я люблю тебя и всегда буду рядом</p>
 
-        <p class="dr">С днём рожденья братик ! Люблю тебя !</p>
+        <p class="dr"></p>
       </div>
     </div>
   </section>
+
+  <script>
+    // С днём рожденья братик ! Люблю тебя !
+
+    setInterval(() => {
+      getDocumentTextRandomColor(".dr", "С днём рожденья братик ! Люблю тебя !")
+    }, 1000);
+
+    function getDocumentTextRandomColor(selector, text) {
+      const documentItem = document.querySelector(selector)
+      const documentItemTextContentLength = text.length
+
+      documentItem.innerHTML = ""
+      
+      const arrayText = []
+      for(let i = 0; i < documentItemTextContentLength; i++) {
+        arrayText.push(`<span style="color: ${getColorRandom()}; transition: 0.5s; opasity:0">${text[i]}</span>`)
+      }
+
+      arrayText.forEach(item => {
+        documentItem.innerHTML += item
+      })
+    }
+
+    function getColorRandom() {
+      return `#${Math.random().toString(16).substring(2,8).toUpperCase()}`
+    }
+
+
+    
+  </script>
 </body>
 </html>

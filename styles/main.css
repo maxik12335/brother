@@ -57,6 +57,11 @@ ul {
   display: block;
   object-fit: cover;
   border-radius: 5px;
+  transition: 0.3s;
+}
+
+.images-list_image:hover {
+  transform: scale(1.03);
 }
 
 .images-message {
@@ -67,6 +72,11 @@ ul {
   display: flex;
   width: fit-content;
   margin: 0 auto;
+  transition: 0.3s;
+}
+
+.images-message:hover {
+  color: #858585;
 }
 
 .ul-wrap {
